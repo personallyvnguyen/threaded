@@ -3,7 +3,7 @@ A discord bot that sends an embed along with your response containing a preview,
 
 ## Instructions
 1. React with a :speech_balloon: to the original message you want to reply to. *Protip: If you type speech in the emoji picker and press enter, :speech_balloon: will be probably be chosen.*
-2. Type and send your message in the same channel to the original message.
+2. Type and send your message in the same channel as the original message.
 
 Then, the bot will ping the author an embed with your message and include a link to the original message with a little text preview.
 
