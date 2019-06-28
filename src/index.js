@@ -29,6 +29,7 @@ class Bot extends Discord.Client {
     this.on('ready', this.ready);
     this.on('rateLimit', this.rateLimit);
   }
+  
   async raw(event) {
     if (!this.rawEvents.hasOwnProperty(event.t)) return;
 
@@ -48,7 +49,6 @@ class Bot extends Discord.Client {
       // See https://github.com/discordjs/guide/pull/165
       message._addReaction(emoji, user);
     }
-
 
     this.emit(this.rawEvents[event.t], reaction, user);
   }
