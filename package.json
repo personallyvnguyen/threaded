@@ -1,0 +1,30 @@
+{
+  "name": "threaded",
+  "version": "1.0.0",
+  "description": "A discord bot that sends an embed along with your response containing a preview, author info, and a link to the message you're replying to.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fappywappy/threaded.git"
+  },
+  "keywords": [
+    "discord.js",
+    "hackweek",
+    "discord",
+    "productivity"
+  ],
+  "author": "JohnPrem",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/fappywappy/threaded/issues"
+  },
+  "homepage": "https://github.com/fappywappy/threaded#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "strip-indent": "^3.0.0"
+  }
+}
