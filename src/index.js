@@ -4,15 +4,14 @@ const config = require('../config.js');
 const stripIndent = require('strip-indent');
 
 class Bot extends Discord.Client {
-  replying = {};
-  rawEvents = {
-    MESSAGE_REACTION_ADD: 'messageReactionAdd',
-    MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
-  };
-
   constructor(config) {
     super();
     Object.assign(this, config);
+    this.replying = {};
+    this.rawEvents = {
+      MESSAGE_REACTION_ADD: 'messageReactionAdd',
+      MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
+    };
     this.init();
   }
 
@@ -20,7 +19,7 @@ class Bot extends Discord.Client {
     console.log(`Logged in as ${this.user.tag}!`);
     this.user.setActivity(`for ${this.emoji} reactions`, { type: 3 });
   }
-  
+
   init() {
     this.login(process.env.TOKEN);
     this.on('message', this.message);
@@ -61,26 +60,26 @@ class Bot extends Discord.Client {
 
     const pastMsg = this.replying[msg.author.id];
     if (pastMsg.channel !== msg.channel) return;
-    
+
     const embed = new Discord.RichEmbed();
     embed.setColor(0x36393f);
     embed.setAuthor(`${msg.member.displayName} | ${msg.author.id}`, msg.author.displayAvatarURL)
-    
+
     let pastMember = pastMsg.member;
     let pastEmbededMsg = pastMsg.content;
-    
+
     if (pastMsg.author.id === this.user.id) {
       pastMember = await this.fetchUser(pastMsg.embeds[0].author.name.match(/(?<=\| )\d+/)[0]);
       pastEmbededMsg = pastMsg.embeds[0].description.match(/(.|\n)+(?=\n\n\*\*Original Message:\*\*)/)[0];
     }
-    
+
     embed.setDescription(stripIndent(`
       ${msg.content}
       
       **Original Message:**
       [${pastEmbededMsg.slice(0, 50)}...](${pastMsg.url})
     `));
-    
+
     msg.delete();
     msg.channel.send(pastMember, embed);
     delete this.replying[msg.author.id];
