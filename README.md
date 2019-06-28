@@ -7,7 +7,7 @@ A discord bot that sends an embed along with your response containing a preview,
 
 Then, the bot will ping the author an embed with your message and include a link to the original message with a little text preview.
 
-![](https://i.imgur.com/nyyOCv9.gifv)
+##[Quick Gif Demo](https://giant.gfycat.com/SpiritedActualKingsnake.webm)
 
 ## What's the purpose of this?
 Often times there are messages you want to reply to that have been buried by new messages. When you do reply to it, no one knows what you're talking about.
