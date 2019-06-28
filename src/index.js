@@ -25,11 +25,6 @@ class Bot extends Discord.Client {
     this.on('rateLimit', this.rateLimit);
   }
   
-  ready() {
-    console.log(`Logged in as ${this.user.tag}!`);
-    this.user.setActivity(`for ${this.emoji} reactions`, { type: 3 });
-  }
-  
   async raw(event) {
     if (!this.rawEvents.hasOwnProperty(event.t)) return;
 
@@ -51,6 +46,11 @@ class Bot extends Discord.Client {
     }
 
     this.emit(this.rawEvents[event.t], reaction, user);
+  }
+
+  ready() {
+    console.log(`Logged in as ${this.user.tag}!`);
+    this.user.setActivity(`for ${this.emoji} reactions`, { type: 3 });
   }
 
   async message(msg) {
