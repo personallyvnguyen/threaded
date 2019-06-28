@@ -21,3 +21,9 @@ https://discord.gg/awa23Ph
 
 ## Bot Invite Link
 https://discordapp.com/api/oauth2/authorize?client_id=593327876246601738&permissions=76800&scope=bot
+
+---------
+
+Created as part of [Discord Hack Week 2019](https://blog.discordapp.com/discord-community-hack-week-build-and-create-alongside-us-6b2a7b7bba33)
+
+![Discord Hack Week 2019](./hackweek-badge.png)
