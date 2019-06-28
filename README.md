@@ -14,7 +14,7 @@ Often times there are messages you want to reply to that have been buried by new
 With this bot, the server members can easily see the context of the message you're replying to.
 
 ## How can I test it out?
-Click on the links below to join the server. The bot is currently hosted on Heroku.
+Click on the links below to join the demo server or invite the bot. The bot is currently hosted on Heroku.
 
 ## Demo Server
 https://discord.gg/awa23Ph
